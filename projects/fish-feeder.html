@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Automatic Fish Feeder</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Arial, sans-serif;
+        background-color: #f3f1ec;
+        color: #000;
+    }
+
+    .header {
+        background-color: #1f2a44;
+        color: #fff;
+        padding: 18px;
+        text-align: center;
+        border-bottom: 3px solid #3a3a3a;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 900px;
+        margin: 30px auto;
+    }
+
+    .back-link {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        font-weight: bold;
+        border-bottom: 2px solid #1f2a44;
+        margin: 25px 0 15px 0;
+        padding-bottom: 6px;
+    }
+
+    p {
+        line-height: 1.55;
+        margin: 10px 0;
+    }
+
+    .caption {
+        font-size: 12px;
+        color: #555;
+        margin-top: 8px;
+    }
+
+    .image-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin: 25px 0;
+    }
+
+    .image-row .image-item {
+        text-align: center;
+        padding: 10px;
+        background-color: #f2ecdc;
+        border-radius: 8px;
+    }
+
+    .image-row img {
+        width: 100%;
+        max-width: 420px;
+        max-height: 320px;  
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+        border-radius: 6px;
+    }
+
+    /* Mobile fallback */
+    @media (max-width: 900px) {
+        .image-row {
+            grid-template-columns: 1fr;
+        }
+
+        .image-row img {
+            max-height: 300px;
+        }
+    }
+
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Automatic Fish Feeder</h1>
+    <p>Embedded Systems / Arduino / PCB</p>
+</div>
+
+<div class="container">
+
+    <div class="back-link">
+        ← <a href="../index.html">Back to portfolio</a>
+    </div>
+
+    <div class="section-title">Overview</div>
+    <p>
+        This project focuses on designing an automated fish feeding system to
+        eliminate inconsistent manual feeding schedules. 
+    </p>
+
+    <div class="section-title">Design Motivation</div>
+    <p>
+        Many aquarium owners rely on memory or manual schedules, which often leads
+        to missed or inconsistent feedings. Also, many owners do not have anyone
+        to feed their fish when they are away from their home for a long period of time.
+    </p>
+
+    <div class="section-title">System Design</div>
+
+    <p>
+        The system uses an Arduino-based controller to drive a servo motor that
+        dispenses a fixed amount of food at scheduled intervals. An LCD display
+        is used as the primary communication interface between the user and the
+        system.
+    </p>
+
+    <p>
+        To achieve a compact and modular design, the system was implemented using
+        two custom-designed PCBs. The first PCB serves as a keypad interface using
+        tactile pushbuttons, while the second (main) PCB houses the microcontroller
+        and manages all core system functionality.
+    </p>
+
+    <div class="image-row">
+        <div class="image-item">
+            <img src="../images/keyboardShm.png" alt="Keypad schematic">
+            <div class="caption">
+                Figure 1. Keypad schematic with pull-up resistors and diode protection.
+            </div>
+        </div>
+
+        <div class="image-item">
+            <img src="../images/motherShm.png" alt="System schematic">
+            <div class="caption">
+                Figure 2. Main system schematic showing microcontroller, power, and peripherals.
+            </div>
+        </div>
+    </div>
+
+    <div class="image-row">
+        <div class="image-item">
+            <img src="../images/keypadPcb.png" alt="System schematic">
+            <div class="caption">
+                Figure 3. Front face of main system PCB design.
+            </div>
+        </div>
+        <div class="image-item">
+            <img src="../images/motherPcb.png" alt="Keypad schematic">
+            <div class="caption">
+                Figure 4. Front face of keypad PCB design.
+            </div>
+        </div>
+    </div>
+   
+    <div class="image-row">
+        <div class="image-item">
+            <img src="../images/keypadBrdd.png" alt="Keypad PCB">
+            <div class="caption">
+                Figure 5. Custom keypad PCB with tactile pushbuttons and diode protection.
+            </div>
+        </div>
+
+        <div class="image-item">
+            <img src="../images/motherBrd.png" alt="Main control PCB">
+            <div class="caption">
+                Figure 6. Main control PCB housing the ATmega328P microcontroller and connections
+                to peripherals.
+            </div>
+        </div>
+    </div>
+
+    <p>
+        All electronic components are enclosed within a custom 3D-printed casing
+        designed to protect the hardware while maintaining a compact form.
+    </p>
+
+    <div class="section-title">Current Status</div>
+        <p>
+            Version 1 successfully validates the core concept. Future work includes
+            further size reduction, and evaluating the feasibility
+            of small-scale deployment through local aquarium retailers.
+        </p>
+
+    </div>
+
+</body>
+</html>

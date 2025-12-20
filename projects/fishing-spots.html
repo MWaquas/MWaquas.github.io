@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fishing Spots ON</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Arial, sans-serif;
+        background-color: #f3f1ec;
+        color: #000;
+    }
+
+    .header {
+        background-color: #1f2a44;
+        color: #fff;
+        padding: 18px;
+        text-align: center;
+        border-bottom: 3px solid #3a3a3a;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 900px;
+        margin: 30px auto;
+    }
+
+    .back-link {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        font-weight: bold;
+        border-bottom: 2px solid #1f2a44;
+        margin: 30px 0 15px 0;
+        padding-bottom: 6px;
+    }
+
+    p {
+        line-height: 1.55;
+        margin: 10px 0;
+    }
+
+    /* 3 image pannel */
+
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin: 25px 0;
+    }
+
+    .image-item {
+        text-align: center;
+        padding: 10px;
+        background-color: #f2ecdc;
+        border-radius: 8px;
+    }
+
+    .image-item img {
+        width: 100%;
+        max-width: 460px;
+        max-height: 420px;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+        border-radius: 6px;
+    }
+
+    .caption {
+        font-size: 12px;
+        color: #555;
+        margin-top: 8px;
+    }
+
+    /* 1 image pannel */
+
+    .outcome-image {
+    margin: 30px 0;
+    padding: 14px;
+    text-align: center;
+    background-color: #f2ecdc;  
+    border-radius: 10px;
+    }
+
+    .outcome-image img {
+        width: 100%;
+        max-width: 760px;
+        max-height: 520px;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+        border-radius: 8px;
+    }
+
+    .outcome-image .caption {
+        font-size: 12px;
+        color: #555;
+        margin-top: 10px;
+    }
+
+    /* Mobile fallback */
+    @media (max-width: 900px) {
+        .image-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .image-item img {
+            max-height: 400px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Fishing Spots ON</h1>
+    <p>Swift / Xcode / Python / UI–UX Design</p>
+</div>
+
+<div class="container">
+
+    <div class="back-link">
+        ← <a href="../index.html">Back to portfolio</a>
+    </div>
+
+    <div class="section-title">Overview</div>
+    <p>
+        Fishing Spots ON is an iOS application that maps Ontario’s stocked fishing
+        locations using processed geospatial datasets, providing anglers with a
+        clear and reliable way to discover productive fishing sites.
+    </p>
+
+    <div class="section-title">Design Motivation</div>
+    <p>
+        While public fish stocking data exists, it is scattered across multiple
+        sources and not easily accessible in a user-friendly format. The goal of
+        this project was to consolidate that data into a fast, intuitive mobile
+        experience.
+    </p>
+
+    <div class="section-title">System Design</div>
+    <p>
+        The application was built using Swift and Xcode, with Python used to clean,
+        manipulate, and map raw stocking datasets to precise geographic coordinates.
+        This enabled accurate in-app location displays and consistent performance
+        across devices.
+    </p>
+
+    <div class="image-grid">
+
+        <div class="image-item">
+            <img src="../images/try.png" alt="Stocking history panel">
+            <div class="caption">
+                Figure 1. Stocking history panel of Lake Ontario.
+            </div>
+        </div>
+
+        <div class="image-item">
+            <img src="../images/map.png" alt="Terrain display">
+            <div class="caption">
+                Figure 2. Terrain display setting.
+            </div>
+        </div>
+
+        <div class="image-item">
+            <img src="../images/district.png" alt="District filter">
+            <div class="caption">
+                Figure 3. Filtering waterbodies by district.
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section-title">Development & Testing</div>
+    <p>
+        Development was carried out independently from concept to launch. Beta
+        testing was conducted with a group of five anglers, where feedback was
+        collected on UI/UX layout, menu structure, and application responsiveness.
+        Iterative changes were made to reduce hang times and improve overall
+        usability.
+    </p>
+
+    <div class="section-title">Outcome</div>
+    <p>
+        The app was deployed to the App Store for $0.99 CAD and achieved a Top 12
+        ranking in the App Store’s Paid Travel category within the first week. The
+        project demonstrates full-cycle ownership, from data processing and software
+        development to deployment and user feedback integration.
+    </p>
+
+    <div class="outcome-image">
+        <img src="../images/pic.png" alt="Fishing Spots ON outcome screen">
+        <div class="caption">
+            Figure 4. Screenshot showing the app ranked top 12 (bottom right).
+        </div>
+    </div>
+
+    <div class="section-title">Next Steps</div>
+    <p>
+        Future development will focus on updating the application to support Liquid
+        Glass display and expanding functionality to include wayfinding features
+        that guide users through their environment.
+    </p>
+
+</div>
+
+</body>
+</html>

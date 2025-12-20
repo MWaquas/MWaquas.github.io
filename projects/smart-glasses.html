@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Assistive Smart Glasses</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Arial, sans-serif;
+        background-color: #f3f1ec;
+        color: #000;
+    }
+
+    .header {
+        background-color: #1f2a44;
+        color: #fff;
+        padding: 18px;
+        text-align: center;
+        border-bottom: 3px solid #3a3a3a;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 900px;
+        margin: 30px auto;
+    }
+
+    .back-link {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        font-weight: bold;
+        border-bottom: 2px solid #1f2a44;
+        margin: 25px 0 15px 0;
+        padding-bottom: 6px;
+    }
+
+    p {
+        line-height: 1.55;
+        margin: 10px 0;
+    }
+
+    .figure {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .figure img {
+        max-width: 70%;
+        border: 1px solid #999;
+        background-color: #fff;
+    }
+
+    .caption {
+        font-size: 12px;
+        color: #555;
+        margin-top: 6px;
+    }
+
+    ul {
+        margin: 10px 0 10px 20px;
+        line-height: 1.5;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Assistive AI Smart Glasses</h1>
+    <p>Embedded Systems / AI / Hardware</p>
+</div>
+
+<div class="container">
+
+    <div class="back-link">
+        ← <a href="../index.html">Back to portfolio</a>
+    </div>
+
+    <div class="section-title">Overview</div>
+    <p>
+        This project was completed as part of a multidisciplinary design initiative
+        involving engineering students at the University of Toronto and psychology
+        students at St. Lawrence College. The goal was to design an assistive wearable
+        device to support a 9-year-old child with ADHD and a visual learning disability.
+    </p>
+
+    <div class="section-title">Design Motivation</div>
+    <p>
+        The client is a 9-year-old child with ADHD and strengths in auditory processing,
+        but challenges with visual reading. In classroom settings, she often processes
+        information out loud and speaks at a high volume, which can be disruptive and
+        negatively impact social interactions.
+    </p>
+    <p>
+        The objective of the project was to design a system that supports information
+        processing through auditory feedback while also providing awareness of speaking
+        volume, without drawing attention or stigmatizing the user.
+    </p>
+
+    <div class="section-title">System Design</div>
+    <p>
+        The design consists of a glasses-mounted embedded system incorporating an
+        onboard camera, open-ear speakers, and microphones. All electrical components
+        interface with a custom PCB powered by a Broadcom BCM2710A1 system-on-chip.
+    </p>
+
+    <p>
+        The device connects over Wi-Fi to a JavaScript-based companion application,
+        where higher-level processing is performed. This separation allows the wearable
+        hardware to remain lightweight while leveraging cloud and application resources.
+    </p>
+
+    <div class="section-title">Design Functions</div>
+    <p>
+        The system was designed to meet the following functional requirements:
+    </p>
+    <ul>
+        <li>
+            <b>Monitor Speaking Levels:</b> Microphone input is analyzed using the Web Audio API
+            to detect and evaluate speaking volume.
+        </li>
+        <li>
+            <b>Provide Feedback:</b> Open-ear speakers deliver audio feedback without isolating
+            the user from their surroundings.
+        </li>
+        <li>
+            <b>Convert Information:</b> Azure services integrated within the application perform
+            optical character recognition and text-to-speech conversion.
+        </li>
+        <li>
+            <b>User Guidance:</b> A video demonstration is available within the application to
+            assist with device operation and setup.
+        </li>
+    </ul>
+
+    <div class="section-title">Implementation & Testing</div>
+
+    <p>
+    The implementation and evaluation of the system were divided into two main phases:
+    a development phase focused on building the application pipeline, and a testing
+    phase focused on evaluating system accuracy and reliability.
+    </p>
+
+    <div class="section-title">Development Phase</div>
+
+    <p>
+    The development phase focused on creating a JavaScript-based application capable
+    of converting written information from images into auditory output. JavaScript was
+    selected due to the team’s prior experience, its suitability for rapid development,
+    and its strong support for API integration.
+    </p>
+
+    <p>
+    The application integrates Microsoft Azure services to perform image analysis and
+    text-to-speech conversion. The following software components were used during
+    development:
+    </p>
+
+    <ul>
+        <li><b>Programming Language:</b> JavaScript (JS)</li>
+        <li><b>APIs:</b> Azure Computer Vision API (OCR), Azure Speech Services (TTS)</li>
+        <li><b>Libraries:</b> Axios (API requests), Azure Speech SDK</li>
+    </ul>
+
+    <p>
+    The development procedure followed a structured pipeline to ensure reliable
+    conversion of text from images into audio output:
+    </p>
+
+    <ul>
+        <li>
+            <b>Environment Setup:</b> API keys for Azure Computer Vision and Speech
+            services were obtained, and required libraries (Axios and Azure Speech SDK)
+            were integrated into the application.
+        </li>
+        <li>
+            <b>Image Processing and Text Extraction:</b> Image files are accepted as
+            input and transmitted to the Azure Computer Vision API. The system verifies
+            successful processing before returning extracted text.
+        </li>
+        <li>
+            <b>Text-to-Speech Conversion:</b> Extracted text is passed to Azure Speech
+            Services using the Speech SDK, which generates and plays the corresponding
+            audio output.
+        </li>
+        <li>
+            <b>User Interface Development:</b> A simple interface allows users to upload
+            images and listen to the generated speech output.
+        </li>
+        <li>
+            <b>Error Handling:</b> Explicit error messages are generated for failure
+            cases, including no text extracted, connection failures, and audio playback
+            errors.
+        </li>
+    </ul>
+
+    <div class="section-title">Testing Phase</div>
+
+    <p>
+    The testing phase evaluated the accuracy and effectiveness of the proposed design
+    using structured test cases and quantitative performance metrics.
+    </p>
+
+    <p>
+    Testing was conducted using a dataset of 30 images, with 10 iterations per image
+    type. The dataset included printed text (e.g., book pages and signage), handwritten
+    notes, and images with varying levels of text clarity such as differing font sizes
+    and distortions.
+    </p>
+
+    <p>
+    System accuracy was evaluated across three categories:
+    </p>
+
+    <ul>
+        <li>
+            <b>OCR Accuracy:</b> Measured using Character Error Rate (CER) and Word Error
+            Rate (WER) by comparing extracted text against the original source.
+        </li>
+        <li>
+            <b>TTS Accuracy:</b> Assessed using intelligibility and naturalness rating
+            scales to evaluate clarity and speech quality.
+        </li>
+        <li>
+            <b>Overall System Accuracy:</b> Measured as the percentage of correctly
+            extracted and spoken words across the test dataset.
+        </li>
+    </ul>
+
+    <p>
+    Collected results were recorded and analyzed to determine whether the system met
+    the defined success criteria, as outlined in the project’s evaluation framework.
+    </p>
+
+
+    <div class="section-title">Current Status</div>
+    <p>
+        The prototype successfully demonstrates a complete pipeline from data capture
+        through processing to user feedback. The project has been completed within the
+        scope of the course, with future improvements identified for latency reduction,
+        hardware ergonomics, and robustness.
+    </p>
+
+</div>
+
+</body>
+</html>

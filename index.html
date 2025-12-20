@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Muhammad Waquas</title>
+
+    <style>   
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Arial, sans-serif;
+            background-color: #f3f1ec;
+            color: #000;
+        }
+        .header {
+            background-color: #1f2a44;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #3a3a3a;
+        }
+
+        .header h1 {
+            margin-bottom: 6px;
+        }
+
+        .header p {
+            margin-top: 0;
+            font-size: 14px;
+            color: #d6dbe5;
+            line-height: 1.4;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 35px auto;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            padding: 10px 0;
+            border-bottom: 2px solid #1f2a44;
+            margin-bottom: 25px;
+        }
+
+        .project-box {
+            background-color: #fbfbf9;
+            border: 2px solid #3a3a3a;
+            padding: 18px;
+            margin-bottom: 30px;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .project-title a {
+            color: #004998;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .project-title a:hover {
+            color: #1f2a44;
+        }
+
+        .category {
+            font-size: 13px;
+            color: #4a5a78;
+            margin-bottom: 14px;
+        }
+
+        .project-box p {
+            line-height: 1.55;
+            margin: 8px 0;
+        }
+
+        .contact-box {
+            background-color: #fbfbf9;
+            border: 2px solid #3a3a3a;
+            padding: 18px;
+        }
+
+        .contact-item {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #004998;
+            text-decoration: underline;
+            cursor: crosshair;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Muhammad Waquas</h1>
+        <p>
+            Engineering Portfolio — Electrical & Computer Engineering
+            <br>University of Toronto
+        </p>
+    </div>
+
+    <div class="container">
+
+        <div class="section-title">Projects</div>
+
+        <!-- Fishing Spots ON -->
+        <div class="project-box">
+            <div class="project-title">
+                <a href="projects/fishing-spots.html">Fishing Spots ON (iOS App)</a>
+            </div>
+            <div class="category">Swift / Xcode / Python / UI–UX Design</div>
+            <p><b>Why:</b> Public fish stocking data is fragmented and difficult to access.</p>
+            <p><b>What:</b> iOS app mapping Ontario’s stocked fishing locations.</p>
+            <p><b>How:</b> Python data processing paired with SwiftUI and MapKit.</p>
+        </div>
+
+        <!-- Assistive Smart Glasses -->
+        <div class="project-box">
+            <div class="project-title">
+                <a href="projects/smart-glasses.html">Assistive Smart Glasses</a>
+            </div>
+            <div class="category">Embedded Systems / Hardware / Azure</div>
+            
+            <p><b>Why:</b> To support a child with ADHD and a visual learning disability by reducing reliance
+                on visual reading and reinforcing auditory learning in classroom environments.</p>
+            <p><b>What:</b> Designed and prototyped an assistive wearable concept and a companion application
+                for converting written information into auditory feedback.</p>
+            <p><b>How:</b> Prototyped key system components, including a camera-based image capture pipeline and a JavaScript 
+                application that performs OCR and text-to-speech processing using Microsoft Azure Vision and Speech services. 
+                Hardware integration and enclosure design were explored at a conceptual level to validate system feasibility.</p>
+            </div>
+
+        <!-- Automatic Fish Feeder -->
+        <div class="project-box">
+            <div class="project-title">
+                <a href="projects/fish-feeder.html">Automatic Fish Feeder</a>
+            </div>
+            <div class="category">Embedded Systems / Arduino / PCB</div>
+            <p><b>Why:</b> Eliminate manual feeding.</p>
+            <p><b>What:</b> Automated feeder with precise timing control.</p>
+            <p><b>How:</b> Arduino based system driving a servo motor.</p>
+        </div>
+
+        <!-- Bike Speedometer -->
+        <div class="project-box">
+            <div class="project-title">
+                <a href="projects/bike-speedometer.html">Bike Speedometer</a>
+            </div>
+            <div class="category">Embedded Systems / Sensors / Physics</div>
+            <p><b>Why:</b> Track speed, max speed, and distance while cycling.</p>
+            <p><b>What:</b> Compact bike-mounted speedometer.</p>
+            <p><b>How:</b> Arduino based system detecting every wheel rotation and doing appropriate calculations.</p>
+        </div>
+
+        <!-- Redesign of Bahen Courtyard -->
+        <div class="project-box">
+            <div class="project-title">
+                <a href="projects/bahen-courtyard.html">Redesign of Bahen Courtyard</a>
+            </div>
+            <div class="category">Engineering Design / Sustainability / Project Management</div>
+            <p><b>Why:</b> Improve accessibility and sustainability of a central campus space.</p>
+            <p><b>What:</b> 1,250 m² courtyard redesign.</p>
+            <p><b>How:</b> Gantt charts, FOC analysis, and stakeholder coordination.</p>
+        </div>
+
+        <!-- Game Development -->
+        <div class="project-box">
+            <div class="project-title">
+                <a href="projects/games.html">Game Development: Connect Four, Reversi & Pong</a>
+            </div>
+            <div class="category">C / C++ / Algorithms / Game Logic</div>
+            <p><b>Why:</b> Strengthen algorithmic thinking and memory management.</p>
+            <p><b>What:</b> Three C/C++ games with full logic and win detection.</p>
+            <p><b>How:</b> 2D arrays, recursion, and custom AI opponents.</p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="section-title">Contact</div>
+
+        <div class="contact-box">
+            <div class="contact-item">
+                <b>Email:</b>
+                <a href="mailto:muhammad.waquas@mail.utoronto.ca">
+                    muhammad.waquas@mail.utoronto.ca
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <b>GitHub:</b>
+                <a href="https://github.com/mwaquas" target="_blank">
+                    github.com/mwaquas
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <b>LinkedIn:</b>
+                <a href="https://www.linkedin.com/in/mwaquas/" target="_blank">
+                    linkedin.com/in/mwaquas
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
