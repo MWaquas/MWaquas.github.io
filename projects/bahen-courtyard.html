@@ -83,6 +83,44 @@
         margin: 0 auto;
         border-radius: 6px;
     }
+
+    .two-banner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 80%;
+    max-width: 900px;
+    margin: 25px auto;
+    }
+
+    .two-banner .image-item {
+        text-align: center;
+        padding: 10px;
+        background-color: #f2ecdc;  /* same light yellow */
+        border-radius: 8px;
+    }
+
+    .two-banner img {
+        width: 100%;
+        max-width: 420px;
+        max-height: 320px;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+        border-radius: 6px;
+    }
+
+    /* Mobile fallback */
+    @media (max-width: 900px) {
+        .two-banner {
+            grid-template-columns: 1fr;
+        }
+
+        .two-banner img {
+            max-height: 300px;
+        }
+    }
 </style>
 </head>
 
@@ -108,9 +146,18 @@
 
     <div class="single-banner">
         <div class="image-item">
-            <img src="images/bahen_schematic.jpg" alt="Image of Bahen">
+            <img src="../images/bahen_schematic.jpg" alt="Image of project scope">
             <div class="caption">
-                Figure 1. Image of the project Scope.  
+                Figure 1. Image highlights the project scope in blue, and shows important surrounding fixtures in red text.  
+            </div>
+        </div>
+    </div>
+
+    <div class="single-banner">
+        <div class="image-item">
+            <img src="../images/bahen_currently.jpg" alt="Image of Bahen">
+            <div class="caption">
+                Figure 2. Image shows the current state of the courtyard.  
             </div>
         </div>
     </div>
@@ -147,6 +194,27 @@
         documentation received a 96% evaluation and is currently under
         consideration for future implementation by the university.
     </p>
+
+        <div class="single-banner">
+            <div class="image-item">
+                <img src="../images/cad_model.png" alt="CAD Model">
+                <div class="caption">
+                    Figure 3. Shows a CAD Model of the proposed design, highlighting the main piece (hypedomes)
+                </div>
+            </div>
+        </div>
+
+        <div class="two-banner">
+            <div class="image-item">
+                <img src="../images/hypedomes.png" alt="Hypedomes Image">
+                <div class="caption">Figure 4. Shows CAD Model of the hypedomes.</div>
+            </div>
+            
+            <div class="image-item">
+                <img src="../images/exploded.png" alt="Exploded Hypedomes">
+                <div class="caption">Figure 5. Shows an exploded view of the hypedomes.</div>
+            </div>
+        </div>
 
     </div>
 
