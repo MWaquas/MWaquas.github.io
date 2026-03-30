@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Radio: Power Amplifier & Filter</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Arial, sans-serif;
+        background-color: #f3f1ec;
+        color: #000;
+    }
+
+    .header {
+        background-color: #1f2a44;
+        color: #fff;
+        padding: 18px;
+        text-align: center;
+        border-bottom: 3px solid #3a3a3a;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 900px;
+        margin: 30px auto;
+    }
+
+    .back-link {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        font-weight: bold;
+        border-bottom: 2px solid #1f2a44;
+        margin: 25px 0 15px 0;
+        padding-bottom: 6px;
+    }
+
+    p {
+        line-height: 1.55;
+        margin: 10px 0;
+    }
+
+    .figure {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .figure img {
+        max-width: 70%;
+        border: 1px solid #999;
+        background-color: #fff;
+    }
+
+    .caption {
+        font-size: 12px;
+        color: #555;
+        margin-top: 6px;
+    }
+    /* Image */
+    .single-banner {
+    margin: 25px 0;
+    }
+
+    .single-banner .image-item {
+        text-align: center;
+        padding: 10px;
+        background-color: #f2ecdc;  /* same light yellow */
+        border-radius: 8px;
+    }
+
+    .single-banner img {
+        width: 100%;
+        max-width: 800px;   /* wider since it's a banner */
+        max-height: 420px;
+        height: auto;
+        object-fit: contain;  /* same behavior as your 3 images */
+        display: block;
+        margin: 0 auto;
+        border-radius: 6px;
+    }
+
+    .two-banner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 80%;
+    max-width: 900px;
+    margin: 25px auto;
+    }
+
+    .two-banner .image-item {
+        text-align: center;
+        padding: 10px;
+        background-color: #f2ecdc;  /* same light yellow */
+        border-radius: 8px;
+    }
+
+    .two-banner img {
+        width: 100%;
+        max-width: 420px;
+        max-height: 320px;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+        border-radius: 6px;
+    }
+
+    /* Mobile fallback */
+    @media (max-width: 900px) {
+        .two-banner {
+            grid-template-columns: 1fr;
+        }
+
+        .two-banner img {
+            max-height: 300px;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Radio: Power Amplifier & Filter</h1>
+    <p>Altium Designer / PCB / Analog Circuits</p>
+</div>
+
+<div class="container">
+
+    <div class="back-link">
+        ← <a href="../index.html">Back to portfolio</a>
+    </div>
+
+    <div class="section-title">Overview</div>
+    <p>
+        This project focuses on designing and implementing a high-frequency RF transmitter
+        power amplifier & filter. The radio operates between 8–16 MHz. The system delivers up to
+        1-10W of power, and attenuates harmonics. <br><br>
+
+         <mark> *** IMPORTANT NOTE ***</mark> <br>
+
+         This project is still in development, and is projected to be completed by April 30, 2026.
+
+    <div class="section-title">Design Motivation</div>
+    <p>
+        The goal of this design was to build a complete RF transmit sub-system that can
+        amplify low-power signals to usable levels while maintaining signal quality. 
+        This involved addressing key challenges such as power delivery, harmonic suppression, and
+        impedance matching within the 8–16 MHz range.<br><br>
+        
+        The project also served as a practical application of RF and analog circuit design 
+        principles, and is the main focus of a course I am taking at the University of Toronto.    
+    </p>
+
+    <div class="section-title">Ideation</div>
+    <p>
+        The design process began with brainstorming multiple approaches for amplifying and 
+        transmitting the RF signal. Different amplifier topologies, including linear and 
+        switching designs, were considered based on efficiency, complexity, and performance 
+        requirements. Component options and circuit configurations were evaluated through 
+        datasheets and reference designs to determine feasibility. <br><br>
+        
+        A Class D switching amplifier was ultimately selected due to its high 
+        efficiency and suitability for the target frequency range. Figure 1 shows the 
+        electrical schematic of the design.
+
+    </p>
+
+    <div class="single-banner">
+        <div class="image-item">
+            <img src="../images/Radio_Schematic.png" alt="Image of electrical schematic">
+            <div class="caption">
+                Figure 1. Image shows the electrical schematic of the design.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section-title">LTspice Design & Validation</div>
+    <p>
+        The circuit was first developed and validated in LTspice to ensure it met 
+        performance requirements before hardware implementation. Over 20 simulations were used 
+        to analyze output power, frequency response, and harmonic distortion across the 8–16 MHz 
+        range. Results showed the system achieved the objective of 1-10W of output power with low total 
+        harmonic distortion, confirming the effectiveness of the amplifier and filtering stages.
+        Results of the tests are hihglighted in Figures 2, and 3.
+        <br><br>
+        
+    </p>
+
+     <div class="single-banner">
+        <div class="image-item">
+            <img src="../images/ltspice_power.png" alt="Image of power produced.">
+            <div class="caption">
+                Figure 2. Shows the output power produced over the passband.
+            </div>
+        </div>
+    </div>
+
+    <div class="single-banner">
+        <div class="image-item">
+            <img src="../images/ltspice_thd.png"  alt="Image of THD produced.">
+            <div class="caption">
+                Figure 3. Shows the Total Harmonic Distortion (THD) produced at 14 MHz.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section-title">PCB Design</div>
+        <p>
+            Following simulation, the system was implemented as a PCB using 
+            Altium Designer. The design involved schematic capture, component selection, 
+            and layout optimization for signal integrity and power routing. Datasheets were 
+            used to ensure accurate footprint creation and proper component integration. 
+            The final PCB reflects key considerations such as high-frequency behavior, 
+            component placement, and overall manufacturability. Figures 4, and 5 shows the PCB.    
+        </p>
+    
+
+    <div class="single-banner">
+        <div class="image-item">
+            <img src="../images/radio_pcb.png" alt="PCB Image.">
+            <div class="caption">
+                Figure 4. PCB design.
+            </div>
+        </div>
+    </div>
+
+    <div class="single-banner">
+        <div class="image-item">
+            <img src="../images/radio_pcb_3d.png"  alt="3D Image of PCB.">
+            <div class="caption">
+                Figure 5. 3D model of the PCB.
+            </div>
+        </div>
+    </div>
+
+    <div class="section-title">Outcome</div>
+        <p>
+            Project is ongoing.
+        </p>
+    </div>
+
+</body>
+</html>
