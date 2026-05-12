@@ -62,6 +62,29 @@
         margin-top: 6px;
     }
 
+    /* Image */
+    .single-banner {
+    margin: 25px 0;
+    }
+
+    .single-banner .image-item {
+        text-align: center;
+        padding: 10px;
+        background-color: #f2ecdc;  /* same light yellow */
+        border-radius: 8px;
+    }
+
+    .single-banner img {
+        width: 100%;
+        max-width: 800px;   /* wider since it's a banner */
+        max-height: 420px;
+        height: auto;
+        object-fit: contain;  /* same behavior as your 3 images */
+        display: block;
+        margin: 0 auto;
+        border-radius: 6px;
+    }
+
     ul {
         margin: 10px 0 10px 20px;
         line-height: 1.5;
@@ -244,8 +267,36 @@
         The prototype successfully demonstrates a complete pipeline from data capture
         through processing to user feedback. The project has been completed within the
         scope of the course, with future improvements identified for latency reduction,
-        hardware ergonomics, and robustness.
+        hardware ergonomics, and robustness. <br> <br>
+        
+        Figure 1 is a video demonstarting how the prototype works. In the video a
+        blurred image shown in Figure 2 (left) is uploaded to the prototype. The prototype
+        successfully converts the text to speech.
     </p>
+
+   <div class="single-banner">
+        <div class="image-item">
+            <video width="100%" controls style="max-width:800px; border-radius:10px;">
+                <source src="../images/ESP_Proto.mp4" type="video/mp4">
+            </video>
+
+            <div class="caption">
+                Figure 1. Demonstration of the prototype. The image used to showcase 
+                the prototype is shown in Figure 2. 
+            </div>
+        </div>
+    </div>
+
+    <div class="single-banner">
+        <div class="image-item">
+            <img src="../images/unicorn_blurry.png"  alt="Blurry image from a book.">
+                <div class="caption">
+                    Figure 2. The image that was uploaded to the prototype. 
+                </div>
+        </div>
+    </div>
+
+
 
 </div>
 
