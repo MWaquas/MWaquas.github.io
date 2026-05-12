@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Karaoke Machine & Pitch Detection</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Arial, sans-serif;
+        background-color: #f3f1ec;
+        color: #000;
+    }
+
+    .header {
+        background-color: #1f2a44;
+        color: #fff;
+        padding: 18px;
+        text-align: center;
+        border-bottom: 3px solid #3a3a3a;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 900px;
+        margin: 30px auto;
+    }
+
+    .back-link {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        font-weight: bold;
+        border-bottom: 2px solid #1f2a44;
+        margin: 25px 0 15px 0;
+        padding-bottom: 6px;
+    }
+
+    p {
+        line-height: 1.55;
+        margin: 10px 0;
+    }
+
+    .caption {
+        font-size: 12px;
+        color: #555;
+        margin-top: 8px;
+    }
+
+    .image-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin: 25px 0;
+    }
+
+    .image-row .image-item {
+        text-align: center;
+        padding: 10px;
+        background-color: #f2ecdc;
+        border-radius: 8px;
+    }
+
+    .image-row img {
+        width: 100%;
+        max-width: 420px;
+        max-height: 320px;  
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+        border-radius: 6px;
+    }
+
+    /* Image */
+    .single-banner {
+    margin: 25px 0;
+    }
+
+    .single-banner .image-item {
+        text-align: center;
+        padding: 10px;
+        background-color: #f2ecdc;  /* same light yellow */
+        border-radius: 8px;
+    }
+
+    .single-banner img {
+        width: 100%;
+        max-width: 800px;   /* wider since it's a banner */
+        max-height: 420px;
+        height: auto;
+        object-fit: contain;  /* same behavior as your 3 images */
+        display: block;
+        margin: 0 auto;
+        border-radius: 6px;
+    }
+
+    /* Mobile fallback */
+    @media (max-width: 900px) {
+        .image-row {
+            grid-template-columns: 1fr;
+        }
+
+        .image-row img {
+            max-height: 300px;
+        }
+    }
+
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Karaoke Machine With Pitch Detection</h1>
+    <p>Embedded Systems / FPGA</p>
+</div>
+
+<div class="container">
+
+    <div class="back-link">
+        ← <a href="../index.html">Back to portfolio</a>
+    </div>
+
+    <div class="section-title">Overview</div>
+    <p> This project focuses on designing and implementing a karaoke 
+        machine on the Intel DE1-SoC FPGA development platform using a Nios V 
+        processor. The system captures live microphone audio, performs 
+        pitch detection, compares the user’s singing pitch against target musical 
+        notes, displays lyrics and scoring information on a VGA monitor, 
+        and plays synchronized audio tracks through external speakers.
+
+     </p>
+
+
+    <div class="section-title">Design Motivation</div>
+    <p>
+        Most karaoke systems primarily focus on audio playback and 
+        lyric display, but do not provide feedback on vocal accuracy.
+        This project was designed to make karaoke systems more interactive and 
+        meaningful by analyzing the user’s singing pitch and providing a score 
+        based on how well they sang.
+    </p>
+
+    <div class="section-title">System Design</div>
+
+    <p>
+        The system is divided into several interconnected subsystems 
+        responsible for audio processing, pitch analysis, graphics rendering, 
+        and user interaction. 
+
+        The design runs on the Intel DE1-SoC FPGA platform using a Nios V 
+        processor. <br><br>
+
+        The design is best explained by the flowchart shown in Figure 1.
+
+
+    <div class="single-banner">
+        <div class="image-item">
+            <img src="../images/flowchart1.png"  alt="Image of flowchart.">
+            <div class="caption">
+                Figure 1. Shows the general block diagram of the design. Yellow circles indicate starting and ending blocks. 
+            </div>
+        </div>
+    </div>
+
+    <p>
+        The user can control the system (select songs, restart, and quit) using the keys on the FPGA. Once the user selects a 
+        song, the FPGA retrieves the corresponding audio file, which contains the 
+        song’s instrumental track stored as a C array. The system then selects the 
+        corresponding lyrics file, which contains the expected vocal pitches, also 
+        stored as a C array. Once the song is complete, the system compares the 
+        user’s singing to the expected pitches and generates a score out of 100. 
+        Throughout the process, the song lyrics, and system status are displayed 
+        on the VGA monitor. <br><br><br>
+    </p>
+
+    <p>
+        The pitch detection subsystem processes short windows of microphone data 
+        to estimate the fundamental frequency of the user’s singing voice. The 
+        design implements CMNDF (Cumulative Mean Normalized Difference Function) 
+        techniques. This approach improves pitch estimation accuracy while 
+        reducing octave detection errors commonly found in simpler 
+        autocorrelation-based methods. <br><br>
+
+        The pitch detection susbystem is best described by the flowchart shown
+        in Figure 2.
+
+    </p>
+
+    <div class="single-banner">
+        <div class="image-item">
+            <img src="../images/flowchart2.png"  alt="Image of flowchart.">
+            <div class="caption">
+                Figure 2. Block Diagram of Pitch Detection Subsystem.
+        </div>
+    </div>
+
+    <p>
+        Figure 3 shows the lyrics of a song being displayed on the monitor.
+        Figure 4 shows the final score of a user who sang the song with 72% accuracy.
+    </p>
+
+    <div class="image-row">
+        <div class="image-item">
+            <img src="../images/lyrcis.png" alt="Lyrics">
+            <div class="caption">
+                Figure 3. Lyrics being displayed to the user.
+            </div>
+        </div>
+
+        <div class="image-item">
+            <img src="../images/score.png" alt="Score">
+            <div class="caption">
+                Figure 4. Final score being displayed to the user.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section-title">Outcome</div>
+        <p>
+            The project was successfully completed as part 
+            of a course at the University of Toronto. The project successfully 
+            demonstrates a fully functional FPGA-based karaoke system capable 
+            of performing pitch analysis, audio playback, lyric rendering, 
+            and scoring.
+        </p>
+
+    </div>
+
+</body>
+</html>
